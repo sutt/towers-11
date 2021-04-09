@@ -32,20 +32,20 @@
         <!-- score -->
         <div class="scoreboard">
             <h2 class="score-title">MOVES:</h2>
-            <h2 class="score">0000</h2>
+            <h2 class="score">00</h2>
         </div>
     </div>
 
 
     <!-- towers -->
     <container class="towers">
-        <div class="tower source">
-            <div class="disk" id="small"></div>
-            <div class="disk" id="medium"></div>
-            <div class="disk" id="large"></div>
+        <div class="tower source" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="disk" id="small" ondragstart="drag(event)"></div>
+            <div class="disk" id="medium" ondragstart="drag(event)"></div>
+            <div class="disk" id="large" ondragstart="drag(event)"></div>
         </div>
-        <div class="tower auxillary"></div>
-        <div class="tower destination"></div>
+        <div class="tower auxillary" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="tower destination" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     </container>
     <div class="board-base"></div>
 
