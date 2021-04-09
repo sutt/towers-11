@@ -8,28 +8,33 @@
     <title>Tower of Hanoi</title>
 </head>
 <body>
-    <!-- title -->
-    <h1>Tower of Hanoi</h1>
+    <div class="header">
+        <!-- title -->
+        <h1 class="heading">Tower of Hanoi</h1>
 
-    <!-- how to play the game -->
-    <button class="modal-button" id="open-modal">Learn to play</button>
-    <div class="about-modal" id="modal">
-        <div id="modal-textbox">
-            <h1>Learn to Play Tower of Hanoi</h1>
-            <p> The Tower of Hanoi is a mathematical game or puzzle which consists of three rods and a number of disks of various sizes. The puzzle starts with the disks stacked on one rod in order of decreasing size with the smallest at the top. These disks are allowed to slide onto any rod and the objective of the puzzle is to move the entire stack to the last rod, obeying a few simple rules: </p>
-            <ol>
-                <li>Only one disk may be moved at a time.</li>
-                <li>Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack or on an empty rod.</li>
-                <li>No disk may be placed on top of a disk that is smaller that is smaller than itself</li>
-            </ol>
-            <div id="modal-footer">
-                <button class="modal-button" id="close-modal">CLOSE</button>
+        <!-- how to play the game -->
+        <button class="modal-button" id="open-modal">Learn to play</button>
+        <div class="about-modal" id="modal">
+            <div id="modal-textbox">
+                <h1>Learn to Play Tower of Hanoi</h1>
+                <p> The Tower of Hanoi is a mathematical game or puzzle which consists of three rods and a number of disks of various sizes. The puzzle starts with the disks stacked on one rod in order of decreasing size with the smallest at the top. These disks are allowed to slide onto any rod and the objective of the puzzle is to move the entire stack to the last rod, obeying a few simple rules: </p>
+                <ol>
+                    <li>Only one disk may be moved at a time.</li>
+                    <li>Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack or on an empty rod.</li>
+                    <li>No disk may be placed on top of a disk that is smaller that is smaller than itself</li>
+                </ol>
+                <div id="modal-footer">
+                    <button class="modal-button" id="close-modal">CLOSE</button>
+                </div>
             </div>
         </div>
-    </div>
-    
 
-    <!-- score -->
+        <!-- score -->
+        <div class="scoreboard">
+            <h2 class="score-title">MOVES:</h2>
+            <h2 class="score">0000</h2>
+        </div>
+    </div>
 
 
     <!-- towers -->
