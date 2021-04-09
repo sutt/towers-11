@@ -1,11 +1,32 @@
 console.log("script is working! Let's play some Towers");
 
 let disk = null;
-let numOfMoves = document.querySelector(".score").innerHTML;
 
-function addToScore () {
-    document.querySelector(".score").innerHTML = numOfMoves++;
+// calculate the number of moves
+function minPossibleNumOfMoves () {
+    let solution = (2**3)-1;
+    if (solution < 10) {
+        document.querySelector("#min-possible-moves").innerHTML = "00" + solution;
+    } else if (solution < 100) {
+        document.querySelector("#min-possible-moves").innerHTML = "0" + solution;
+    } else {
+        document.querySelector("#min-possible-moves").innerHTML = solution;
+    }
 }
+
+// add 1 to score each time a disk is moved
+function addToScore () {
+    let score = document.querySelector("#score").innerText;
+    
+    // if counter is less than 10, then fill one 0 before the score
+    if (parseInt(score) < 9) {
+        score = "00" + (parseInt(score)+1);
+    } else score = "0" + (parseInt(score)+1);
+
+    // save the new score "number of moves"
+    document.querySelector("#score").innerHTML = score;
+}
+
 // event listener for when towers are clicked
 const towers = document.getElementsByClassName("tower");
 for (tower of towers) {
@@ -33,17 +54,17 @@ function disksDraggable () {
         if (tower.firstElementChild != null) tower.firstElementChild.setAttribute("draggable", "true");
     }
 }
+// run function on current board
 disksDraggable();
+minPossibleNumOfMoves();
 
 // functions for when the disk is dragged
 function allowDrop(event) {
     event.preventDefault();
 }
-  
 function drag(event) {
     event.dataTransfer.setData("text", event.target.id);
-}
-  
+} 
 function drop(event) {
     event.preventDefault();
     let data = event.dataTransfer.getData("text");

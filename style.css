@@ -4,13 +4,16 @@ body {
 h1 {
     text-align: center;
 }
+h4 {
+    text-align: right;
+}
 .header {
     border: solid;
     margin: auto 20px;
     height: 125px;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .heading {
     order: 1;
@@ -20,10 +23,10 @@ h1 {
     order: 2;
 }
 .score-title {
-    margin-right: 50px;
+    margin-right: 60px;
 }
 .score {
-    margin-left: 25px;
+    
 }
 .towers {
     border: solid;
@@ -86,8 +89,8 @@ h1 {
 	border-radius: 5px;
 	margin: 150px auto;
 	box-shadow: 0 2px 2px black;
-	padding: 2%;
-	line-height: 120%;
+	padding: 2% 4%;
+	line-height: 150%;
 }
 .modal-button {
     align-self: flex-end;
