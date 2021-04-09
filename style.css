@@ -1,37 +1,76 @@
 body {
-    background-color: antiquewhite;
-    display: flex;
-    flex-direction: column;
+    background-color: whitesmoke;
 }
 h1 {
     text-align: center;
 }
+.towers {
+    border: solid;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    margin: auto 30px;
+    height: 600px;
+}
+.tower {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border: solid;
+    background-color: #B68A74;
+    width: 45px;
+    margin: 30px 100px 0 100px;
+}
+.board-base {
+    padding: 15px;
+    border: solid;
+    margin: auto 30px;
+    background-color: #B68A74;
+}
+.disk {
+    border: solid;
+    border-radius: 30px;
+    height: 50px;
+}
+#small {
+    background-color: #AB74B6;
+    width: 90px;
+
+}
+#medium {
+    background-color: #7FB674;
+    width: 160px;
+}
+#large {
+    background-color: #74A0B6;
+    width: 245px;
+}
+
 #modal {
-	background-color: rgba(250, 235, 215, 0.5);
+    display: none;
+	background-color: rgba(182, 171, 116, 0.50);
 	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100%;
 	width: 100%;
-
-	z-index: 1;
 	overflow: auto;
-
 }
 #modal-textbox {
 	background-color: whitesmoke;
 	height: 350px;
 	width: 550px;
 	border-radius: 5px;
-
 	margin: 150px auto;
 	box-shadow: 0 2px 2px black;
 	padding: 2%;
 	line-height: 120%;
 }
 .modal-button {
-	padding: 10px;
-	background-color: rgb(172, 198, 81);
+    padding: 10px;
+    margin-left: 30px;
+	background-color: #B68A74;
 	border: none;
 	outline: none;
 	color: white;
