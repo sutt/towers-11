@@ -1,5 +1,5 @@
 body {
-    background-color: whitesmoke;
+    background-color: #EAEAEA;
 }
 h1 {
     text-align: center;
@@ -8,7 +8,6 @@ h4 {
     text-align: right;
 }
 .header {
-    border: solid;
     margin: auto 20px;
     height: 125px;
     display: flex;
@@ -28,8 +27,16 @@ h4 {
 .score {
     
 }
+.tick-container {
+    order: 4;
+    flex-flow: row nowrap;
+    width: 100%;
+}
+.ticker {
+    width: 3em;
+    height: 25px;
+}
 .towers {
-    border: solid;
     display: flex;
     flex-flow: row;
     justify-content: center;
@@ -43,7 +50,7 @@ h4 {
     align-items: center;
     border: solid;
     border-radius: 50px 50px 0 0;
-    background-color: #B68A74;
+    background-color: #585858;
     width: 45px;
     margin: 30px 100px 0 100px;
 }
@@ -51,24 +58,24 @@ h4 {
     padding: 15px;
     border: solid;
     margin: auto 30px;
-    background-color: #B68A74;
+    background-color: #1D1D1D;
 }
 .disk {
     border: solid;
     border-radius: 30px;
     height: 50px;
 }
-#small {
-    background-color: #AB74B6;
+.small {
+    background-color: #C12EE3;
     width: 90px;
 
 }
-#medium {
-    background-color: #7FB674;
+.medium {
+    background-color: #50E32E;
     width: 160px;
 }
-#large {
-    background-color: #74A0B6;
+.large {
+    background-color: #E3672E;
     width: 245px;
 }
 

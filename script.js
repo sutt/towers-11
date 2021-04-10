@@ -2,16 +2,16 @@ console.log("script is working! Let's play some Towers");
 
 let disk = null;
 
-// calculate the number of moves
+// calculate the minimum number of moves to solve the game
 function minPossibleNumOfMoves () {
     let solution = (2**3)-1;
-    if (solution < 10) {
-        document.querySelector("#min-possible-moves").innerHTML = "00" + solution;
-    } else if (solution < 100) {
-        document.querySelector("#min-possible-moves").innerHTML = "0" + solution;
-    } else {
-        document.querySelector("#min-possible-moves").innerHTML = solution;
-    }
+    if (solution < 10) document.querySelector("#min-possible-moves").innerHTML = "00" + solution;
+    else if (solution < 100) document.querySelector("#min-possible-moves").innerHTML = "0" + solution;
+    else document.querySelector("#min-possible-moves").innerHTML = solution;
+}
+
+function populateBoard () {
+
 }
 
 // add 1 to score each time a disk is moved
@@ -19,9 +19,8 @@ function addToScore () {
     let score = document.querySelector("#score").innerText;
     
     // if counter is less than 10, then fill one 0 before the score
-    if (parseInt(score) < 9) {
-        score = "00" + (parseInt(score)+1);
-    } else score = "0" + (parseInt(score)+1);
+    if (parseInt(score) < 9) score = "00" + (parseInt(score)+1);
+    else score = "0" + (parseInt(score)+1);
 
     // save the new score "number of moves"
     document.querySelector("#score").innerHTML = score;
@@ -58,20 +57,51 @@ function disksDraggable () {
 disksDraggable();
 minPossibleNumOfMoves();
 
-// functions for when the disk is dragged
-function allowDrop(event) {
+// preventing the user from placing a larger disk on a smaller one
+function isLegalMove (event, data) {
+    if (event.target.children[0] === undefined) {
+        event.target.prepend(document.getElementById(data));
+        addToScore();
+    }
+    else if (data < event.target.children[0].getAttribute("id")) {
+        event.target.prepend(document.getElementById(data));
+        addToScore();
+    }
+    else alert("That is an illegal move!")
+}
+
+
+
+// functions to drag the disks from tower to tower
+// the start of the drag
+function dragStart(event) {
+    event.dataTransfer.setData("disk", event.target.id);
+    event.dataTransfer.effectAllowed = "move";
+} 
+// dragging the disk
+function dragOver(event) {
+    event.preventDefault();
+    event.dataTransfer.dropEffect = "move";
+}
+// entering a tower div
+function dragEnter(event) {
+    
+}
+function dragend(event) {
     event.preventDefault();
 }
-function drag(event) {
-    event.dataTransfer.setData("text", event.target.id);
-} 
+// dropping the disk
 function drop(event) {
     event.preventDefault();
-    let data = event.dataTransfer.getData("text");
-    event.target.prepend(document.getElementById(data));
-    addToScore();
+    let data = event.dataTransfer.getData("disk");
+    isLegalMove(event, data);
     disksDraggable();
 }
+
+// slider to set how many disks
+document.getElementById("diskRange").addEventListener('change', function() {
+    console.log("slider has been moved");
+})
 
 // about the game modal
 // open the "learn to play" modal by clicking the button
