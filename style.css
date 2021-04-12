@@ -1,5 +1,6 @@
 body {
     background-color: #EAEAEA;
+    min-width: 800px;
 }
 h1 {
     text-align: center;
@@ -19,6 +20,7 @@ h4 {
 }
 .scoreboard {
     align-self: flex-end;
+    line-height: .5rem;
     order: 2;
 }
 .score-title {
@@ -51,7 +53,8 @@ h4 {
     border: solid;
     border-radius: 50px 50px 0 0;
     background-color: #585858;
-    width: 45px;
+    min-width: 45px;
+    max-width: 45px;
     margin: 30px 100px 0 100px;
 }
 .board-base {
@@ -100,7 +103,7 @@ h4 {
 	line-height: 150%;
 }
 .modal-button {
-    align-self: flex-end;
+    align-self: center;
     order: 0;
     padding: 10px;
     margin-left: 20px;

@@ -10,8 +10,11 @@ function minPossibleNumOfMoves () {
     else document.querySelector("#min-possible-moves").innerHTML = solution;
 }
 
-function populateBoard () {
-
+// add or take away disks
+function populateBoard (value) {
+    $("#towers").load("#towers")
+    console.log("slider has been moved")
+    
 }
 
 // add 1 to score each time a disk is moved
@@ -100,7 +103,8 @@ function drop(event) {
 
 // slider to set how many disks
 document.getElementById("diskRange").addEventListener('change', function() {
-    console.log("slider has been moved");
+    let value = document.getElementById("diskRange").value
+    populateBoard(value);
 })
 
 // about the game modal
