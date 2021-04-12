@@ -26,24 +26,20 @@ h4 {
 .score-title {
     margin-right: 60px;
 }
-.score {
-    
-}
 .tick-container {
     order: 4;
-    flex-flow: row nowrap;
     width: 100%;
 }
 .ticker {
-    width: 3em;
+    width: 5em;
     height: 25px;
 }
 .towers {
     display: flex;
     flex-flow: row;
     justify-content: center;
-    margin: auto 30px;
-    height: 600px;
+    margin: 100px 30px 0 30px;
+    height: 400px;
 }
 .tower {
     display: flex;
@@ -53,33 +49,53 @@ h4 {
     border: solid;
     border-radius: 50px 50px 0 0;
     background-color: #585858;
-    min-width: 45px;
-    max-width: 45px;
-    margin: 30px 100px 0 100px;
+    min-width: 20px;
+    max-width: 20px;
+    margin: 30px 140px 0 140px;
 }
 .board-base {
     padding: 15px;
     border: solid;
-    margin: auto 30px;
+    margin: -5px 30px 0 30px;
     background-color: #1D1D1D;
 }
 .disk {
     border: solid;
     border-radius: 30px;
-    height: 50px;
+    height: 35px;
 }
-.small {
-    background-color: #C12EE3;
-    width: 90px;
+#disk1 {
+    background-color: rgba(145, 189, 202);
+    width: 60px;
 
 }
-.medium {
-    background-color: #50E32E;
-    width: 160px;
+#disk2 {
+    background-color: rgba(224, 110, 189);
+    width: 90px;
 }
-.large {
-    background-color: #E3672E;
-    width: 245px;
+#disk3 {
+    background-color: rgba(224, 145, 110);
+    width: 120px;
+}
+#disk4 {
+    background-color: rgba(145, 224, 189);
+    width: 150px;
+}
+#disk5 {
+    background-color: rgba(224, 202, 110);
+    width: 180px;
+}
+#disk6 {
+    background-color: rgba(189, 224, 110);
+    width: 210px;
+}
+#disk7 {
+    background-color: rgba(224, 110, 132);
+    width: 240px;
+}
+#disk8 {
+    background-color: rgba(202, 110, 224);
+    width: 270px;
 }
 
 #modal {

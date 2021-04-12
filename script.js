@@ -1,20 +1,36 @@
 console.log("script is working! Let's play some Towers");
 
 let disk = null;
+let numOfDisks = 3;
+
+if (localStorage.getItem("numOfDisks") !== 3) numOfDisks = localStorage.getItem("numOfDisks");
+document.getElementById("disk-range").value = numOfDisks;
+
+// populate the board with number of disks inputed
+function populateBoard () {
+    for (let i = 1; i <= numOfDisks; i++) {
+        let disk = document.createElement("div")
+        // class="disk small" id="1" ondragstart="dragStart(event)"
+        disk.setAttribute("class", "disk");
+        disk.setAttribute("id", "disk"+i);
+        disk.setAttribute("ondragstart", "dragStart(event)");
+
+        document.querySelector(".source").appendChild(disk);
+    }
+}
 
 // calculate the minimum number of moves to solve the game
-function minPossibleNumOfMoves () {
-    let solution = (2**3)-1;
+function minPossibleNumOfMoves (n) {
+    let solution = (2**n)-1;
     if (solution < 10) document.querySelector("#min-possible-moves").innerHTML = "00" + solution;
     else if (solution < 100) document.querySelector("#min-possible-moves").innerHTML = "0" + solution;
     else document.querySelector("#min-possible-moves").innerHTML = solution;
 }
 
 // add or take away disks
-function populateBoard (value) {
-    $("#towers").load("#towers")
-    console.log("slider has been moved")
-    
+function changeDiskPopulation (value) {
+    localStorage.setItem("numOfDisks",document.getElementById("disk-range").value.toString())
+    location.reload();
 }
 
 // add 1 to score each time a disk is moved
@@ -27,20 +43,6 @@ function addToScore () {
 
     // save the new score "number of moves"
     document.querySelector("#score").innerHTML = score;
-}
-
-// event listener for when towers are clicked
-const towers = document.getElementsByClassName("tower");
-for (tower of towers) {
-    tower.addEventListener('click', function (tower) {
-        if (disk == null) {
-            disk = tower.target.firstElementChild;
-        } else {
-            tower.target.prepend(disk);
-            addToScore();
-            disk = null;
-        }
-    })
 }
 
 // a function that makes each of the disks draggable
@@ -56,9 +58,6 @@ function disksDraggable () {
         if (tower.firstElementChild != null) tower.firstElementChild.setAttribute("draggable", "true");
     }
 }
-// run function on current board
-disksDraggable();
-minPossibleNumOfMoves();
 
 // preventing the user from placing a larger disk on a smaller one
 function isLegalMove (event, data) {
@@ -72,8 +71,6 @@ function isLegalMove (event, data) {
     }
     else alert("That is an illegal move!")
 }
-
-
 
 // functions to drag the disks from tower to tower
 // the start of the drag
@@ -101,10 +98,31 @@ function drop(event) {
     disksDraggable();
 }
 
+// event listener for when towers are clicked
+const towers = document.getElementsByClassName("tower");
+for (tower of towers) {
+    tower.addEventListener('click', function (tower) {
+        if (disk == null) {
+            disk = tower.target.firstElementChild;
+        } else {
+            tower.target.prepend(disk);
+            addToScore();
+            disk = null;
+        }
+    })
+}
+
+// set the board
+populateBoard();
+minPossibleNumOfMoves(numOfDisks);
+disksDraggable();
+
+
+
 // slider to set how many disks
-document.getElementById("diskRange").addEventListener('change', function() {
-    let value = document.getElementById("diskRange").value
-    populateBoard(value);
+document.getElementById("disk-range").addEventListener('change', function() {
+    let value = document.getElementById("disk-range").value
+    changeDiskPopulation(value);
 })
 
 // about the game modal
@@ -117,3 +135,4 @@ document.getElementById('open-modal').addEventListener('click', function () {
 document.getElementById('close-modal').addEventListener('click', function () {
     document.getElementById('modal').style.display = "none";
 }); 
+

@@ -34,21 +34,11 @@
         <div class="scoreboard">
             <h4 class="min-possible-moves">Minimum number of possible moves: <span id="min-possible-moves">000</span></h4>
             <h4 class="score">MOVES: <span id="score">000</span></h4>
-                    <!-- difficulty slider -->
-            <div class="tick-container">
-                <h4 class="tick-header">Select number of disks: <input type="number" class="ticker" id="diskRange" list="tickmarks" placeholder="3" min="2" max="8"></h4>
-                
-        
-                <datalist id="tickmarks">
-                    <option value="2"></option>
-                    <option value="3"></option>
-                    <option value="4"></option>
-                    <option value="5"></option>
-                    <option value="6"></option>
-                    <option value="7"></option>
-                    <option value="8"></option>
-                </datalist>
-            </div>
+            
+            <!-- difficulty slider -->
+            <form class="tick-container">
+                <label class="tick-header" for="numOfDisks">Number of disks: <input type="number" class="ticker" id="disk-range" name="numOfDisks" step="1" value="3" placeholder="# of disks" min="2" max="8"></label>
+            </form>
         </div>
     </div>
 
@@ -56,16 +46,19 @@
     <!-- towers -->
     <container class="towers">
         <div class="tower source" ondrop="drop(event)" ondragover="dragOver(event)" ondragenter="dragEnter(event)">
-            <div class="disk small" id="1" ondragstart="dragStart(event)"></div>
+            <!-- <div class="disk small" id="1" ondragstart="dragStart(event)"></div>
             <div class="disk medium" id="2" ondragstart="dragStart(event)"></div>
-            <div class="disk large" id="3" ondragstart="dragStart(event)"></div>
+            <div class="disk large" id="3" ondragstart="dragStart(event)"></div> -->
         </div>
         <div class="tower auxillary" ondrop="drop(event)" ondragover="dragOver(event)" ondragenter="dragEnter(event)"></div>
         <div class="tower destination" ondrop="drop(event)" ondragover="dragOver(event)" ondragenter="dragEnter(event)"></div>
     </container>
+
+    <!-- the tower's base -->
     <div class="board-base"></div>
 
 
+    <!-- link to javascript file -->
     <script src="script.js"></script>
 </body>
 </html>
