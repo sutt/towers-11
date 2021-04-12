@@ -20,19 +20,20 @@ h4 {
 }
 .scoreboard {
     align-self: flex-end;
+    display: flex;
+    flex-direction: column;
     line-height: .5rem;
     order: 2;
 }
-.score-title {
-    margin-right: 60px;
-}
 .tick-container {
-    order: 4;
     width: 100%;
 }
 .ticker {
     width: 5em;
     height: 25px;
+}
+.start-over {
+    margin: 1em;
 }
 .towers {
     display: flex;

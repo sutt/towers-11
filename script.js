@@ -117,8 +117,6 @@ populateBoard();
 minPossibleNumOfMoves(numOfDisks);
 disksDraggable();
 
-
-
 // slider to set how many disks
 document.getElementById("disk-range").addEventListener('change', function() {
     let value = document.getElementById("disk-range").value
@@ -136,3 +134,7 @@ document.getElementById('close-modal').addEventListener('click', function () {
     document.getElementById('modal').style.display = "none";
 }); 
 
+// reset the board
+document.getElementById("reload").addEventListener('click', function () {
+    location.reload();
+});

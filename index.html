@@ -29,16 +29,19 @@
             </div>
         </div>
 
+        <!-- number of moves made by user -->
+        <h4 class="score">MOVES: <span id="score">000</span></h4>
 
         <!-- score -->
         <div class="scoreboard">
-            <h4 class="min-possible-moves">Minimum number of possible moves: <span id="min-possible-moves">000</span></h4>
-            <h4 class="score">MOVES: <span id="score">000</span></h4>
-            
-            <!-- difficulty slider -->
-            <form class="tick-container">
+             <!-- difficulty slider -->
+             <form class="tick-container">
                 <label class="tick-header" for="numOfDisks">Number of disks: <input type="number" class="ticker" id="disk-range" name="numOfDisks" step="1" value="3" placeholder="# of disks" min="2" max="8"></label>
             </form>
+
+            <h4 class="min-possible-moves">Minimum number of possible moves: <span id="min-possible-moves">000</span></h4>
+
+            <button class="start-over" id="reload">START OVER</button>
         </div>
     </div>
 
