@@ -3,6 +3,8 @@ console.log("script is working! Let's play some Towers");
 let disk = null;
 let numOfDisks = 3;
 
+const towers = document.getElementsByClassName("tower");
+
 if (localStorage.getItem("numOfDisks") !== 3) numOfDisks = localStorage.getItem("numOfDisks");
 document.getElementById("disk-range").value = numOfDisks;
 
@@ -61,15 +63,24 @@ function disksDraggable () {
 
 // preventing the user from placing a larger disk on a smaller one
 function isLegalMove (event, data) {
-    if (event.target.children[0] === undefined) {
-        event.target.prepend(document.getElementById(data));
+    if (event.target.children[0].children[0] === undefined) {
+        event.target.children[0].prepend(document.getElementById(data));
         addToScore();
     }
-    else if (data < event.target.children[0].getAttribute("id")) {
-        event.target.prepend(document.getElementById(data));
+    else if (data < event.target.children[0].children[0].getAttribute("id")) {
+        event.target.children[0].prepend(document.getElementById(data));
         addToScore();
     }
     else alert("That is an illegal move!")
+}
+
+// check to see if the game is complete
+function isComplete (event, data, n) {
+    if (event.target.classList[1] == "destination") {
+        if (event.target.childElementCount == n) {
+            alert("YOU WIN!")
+        }
+    }
 }
 
 // functions to drag the disks from tower to tower
@@ -95,11 +106,11 @@ function drop(event) {
     event.preventDefault();
     let data = event.dataTransfer.getData("disk");
     isLegalMove(event, data);
+    isComplete(event, data, numOfDisks);
     disksDraggable();
 }
 
 // event listener for when towers are clicked
-const towers = document.getElementsByClassName("tower");
 for (tower of towers) {
     tower.addEventListener('click', function (tower) {
         if (disk == null) {

@@ -45,21 +45,21 @@
         </div>
     </div>
 
-
     <!-- towers -->
     <container class="towers">
-        <div class="tower source" ondrop="drop(event)" ondragover="dragOver(event)" ondragenter="dragEnter(event)">
-            <!-- <div class="disk small" id="1" ondragstart="dragStart(event)"></div>
-            <div class="disk medium" id="2" ondragstart="dragStart(event)"></div>
-            <div class="disk large" id="3" ondragstart="dragStart(event)"></div> -->
+        <div class="tower-area" ondrop="drop(event)" ondragover="dragOver(event)" ondragenter="dragEnter(event)">
+            <div class="tower source"></div>
         </div>
-        <div class="tower auxillary" ondrop="drop(event)" ondragover="dragOver(event)" ondragenter="dragEnter(event)"></div>
-        <div class="tower destination" ondrop="drop(event)" ondragover="dragOver(event)" ondragenter="dragEnter(event)"></div>
+        <div class="tower-area" ondrop="drop(event)" ondragover="dragOver(event)" ondragenter="dragEnter(event)">
+            <div class="tower auxillary"></div>
+        </div>
+        <div class="tower-area" ondrop="drop(event)" ondragover="dragOver(event)" ondragenter="dragEnter(event)">
+            <div class="tower destination"></div>
+        </div>
     </container>
 
     <!-- the tower's base -->
     <div class="board-base"></div>
-
 
     <!-- link to javascript file -->
     <script src="script.js"></script>
