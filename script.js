@@ -2,6 +2,7 @@ console.log("script is working! Let's play some Towers");
 
 let disk = null;
 let numOfDisks = 3;
+document.getElementById("disk-range").value = numOfDisks;
 
 const towers = document.getElementsByClassName("tower");
 
@@ -92,9 +93,13 @@ function isLegalMove (event, data) {
 
 // check to see if the game is complete
 function isComplete (event, data, n) {
-    if (event.target.classList[1] == "destination") {
+    if (event.target.children[0].classList[1] == "destination") {
+        if (event.target.children[0].childElementCount == n) {
+            alert("CONGRATULATIONS! YOU DID IT!");
+        }
+    } else if (event.target.classList[1] == "destination") {
         if (event.target.childElementCount == n) {
-            alert("YOU WIN!")
+            alert("CONGRATULATIONS! YOU DID IT!");
         }
     }
 }
@@ -163,5 +168,5 @@ document.getElementById('close-modal').addEventListener('click', function () {
 
 // reset the board
 document.getElementById("reload").addEventListener('click', function () {
-    location.reload();
+    window.location.reload();
 });

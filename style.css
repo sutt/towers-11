@@ -1,31 +1,33 @@
 body {
-    background-color: #EAEAEA;
-    min-width: 800px;
+    background-color: rgb(254,244,216);
+    display: flex;
+    flex-direction: column;
 }
 h1 {
+    font-family: 'Black Han Sans', sans-serif;
+    align-self: center;
     text-align: center;
 }
 .header {
     margin: auto 20px;
+    padding: auto;
     height: 125px;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
+    justify-content: space-between;
+    font-family: 'East Sea Dokdo', cursive;
 }
 .score {
-    order: 1;
+    font-size: 2em;
     align-self: center;
+    padding: 10px;
 }
 .scoreboard {
-    order: 2;
-    align-self: center;
+    font-size: 1.75em;
+    align-self: flex-start;
     display: flex;
+    line-height: .2rem;
     flex-direction: column;
-    line-height: .5rem;
 
-}
-.tick-container {
-    width: 100%;
 }
 .ticker {
     width: 5em;
@@ -34,10 +36,16 @@ h1 {
 .start-over {
     margin: 1em;
 }
+.tower-background {
+    background-image: url(images/background_clouds.jpg);
+    background-repeat: round;
+    background-size: 25rem;
+}
 .towers {
     display: flex;
     justify-content: space-around;
     margin: 100px 30px -9px 30px;
+    min-width: 900px;
 }
 .tower-area {
     display: flex;
@@ -48,7 +56,7 @@ h1 {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    border: solid;
+    border: 1px solid;
     border-radius: 50px 50px 0 0;
     background-color: #585858;
     width: 25px;
@@ -58,7 +66,9 @@ h1 {
 .board-base {
     padding: 15px;
     margin: 0 30px;
-    background-color: #1D1D1D;
+    border-radius: 50px 50px 0 0;
+    background-color: #585858;
+    min-width: 900px;
 }
 .disk {
     border: solid;
@@ -100,19 +110,18 @@ h1 {
 }
 .start-over {
     align-self: center;
-    order: 0;
-    padding: 5px 15px;
+    padding: 11px;
 	background-color: rgb(224, 189, 110, .5);
 	border: solid;
     border-radius: 5px;
 	outline: none;
 	color: black;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Do Hyeon', sans-serif;
 	cursor: pointer;
 }
 #modal {
     display: none;
-	background-color: rgba(224, 160, 110, 0.25);
+	background-color: rgba(251, 219, 156, 0.35);
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -122,27 +131,53 @@ h1 {
 }
 #modal-textbox {
 	background-color: whitesmoke;
+    font-family: 'Do Hyeon', sans-serif;
+    text-align: justify;
 	height: 350px;
 	width: 550px;
 	border-radius: 5px;
 	margin: 150px auto;
 	box-shadow: 0 2px 2px black;
-	padding: 2% 4%;
+	padding: 4% 6%;
 	line-height: 150%;
 }
 .modal-button {
     align-self: center;
-    order: 0;
     padding: 10px;
-    margin-left: 20px;
 	background-color: rgb(110, 224, 132, .5);
 	border: solid;
     border-radius: 5px;
 	outline: none;
 	color: black;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Do Hyeon', sans-serif;
 	cursor: pointer;
 }
 #modal-footer {
 	text-align: right;
+}
+.homepage {
+    background-image: url(images/hanoi.jpg);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-size: 50%;
+    height: 600px;
+}
+.play-screen {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+.play-button {
+    align-self: center;
+    text-decoration: none;
+    margin-top: 80px;
+    padding: 10px 20px;
+	background-color: rgb(63, 215, 224, .9);
+	border: solid;
+    border-radius: 5px;
+	outline: none;
+	color: black;
+	font-family: 'East Sea Dokdo', cursive;
+    font-size: 30px;
+	cursor: pointer;
 }
