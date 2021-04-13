@@ -63,7 +63,22 @@ function disksDraggable () {
 
 // preventing the user from placing a larger disk on a smaller one
 function isLegalMove (event, data) {
-    if (event.target.children[0].children[0] === undefined) {
+    if (event.target.classList[0] == "tower") {
+        console.log("Im in the if");
+        if (event.target.children[0] === undefined) {
+            console.log("Im in the if");
+            console.log(event.target);
+            event.target.prepend(document.getElementById(data));
+            addToScore();
+        }
+        else if (data < event.target.children[0].getAttribute("id")) {
+            event.target.prepend(document.getElementById(data));
+            addToScore();
+        }
+        else alert("That is an illegal move!")
+    }
+    else if (event.target.children[0].children[0] === undefined) {
+        console.log(event.target.children[0])
         event.target.children[0].prepend(document.getElementById(data));
         addToScore();
     }
