@@ -63,22 +63,23 @@ function disksDraggable () {
 
 // preventing the user from placing a larger disk on a smaller one
 function isLegalMove (event, data) {
+    // is the cursor over the actual tower
     if (event.target.classList[0] == "tower") {
-        console.log("Im in the if");
+        // does the tower have any disks
         if (event.target.children[0] === undefined) {
-            console.log("Im in the if");
-            console.log(event.target);
             event.target.prepend(document.getElementById(data));
             addToScore();
         }
+        // if the tower contains disks, is the top disk smaller than the current disk being dragged
         else if (data < event.target.children[0].getAttribute("id")) {
             event.target.prepend(document.getElementById(data));
             addToScore();
         }
+        // if these conditions arent met, it must be an illegal move
         else alert("That is an illegal move!")
     }
+    // is the cursor near the tower
     else if (event.target.children[0].children[0] === undefined) {
-        console.log(event.target.children[0])
         event.target.children[0].prepend(document.getElementById(data));
         addToScore();
     }

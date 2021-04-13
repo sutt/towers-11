@@ -64,6 +64,7 @@ h1 {
     border: solid;
     border-radius: 30px;
     height: 35px;
+    cursor: pointer;
 }
 #disk1 {
     background-color: rgba(145, 189, 202);
