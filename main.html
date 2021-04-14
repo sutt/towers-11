@@ -21,8 +21,8 @@
             <form class="tick-container">
                <label class="tick-header" for="numOfDisks">number of disks: <input type="number" class="ticker" id="disk-range" name="numOfDisks" step="1" value="" placeholder="# of disks" min="2" max="8"></label>
            </form>
-
-           <h4 class="min-possible-moves">minimum number of moves: <span id="min-possible-moves">000</span></h4>
+           <!-- minimum number of moves needed to beat the game -->
+           <h4 class="min-possible-moves">minimum # of moves: <span id="min-possible-moves">000</span></h4>
         </div>
 
         <!-- number of moves made by user -->
@@ -44,6 +44,7 @@
                 </div>
             </div>
         </div>
+
         <!-- reload the screen to start over -->
         <button class="start-over" id="reload">start over</button>
     </div>
