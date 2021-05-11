@@ -11,7 +11,7 @@ The puzzle can be played with any number of disks, however, the minimal number o
 - For example, with 3 disks, the puzzle can be solved in 7 moves.
 
 ##### screenshots;
-- [Title Screen](images/screenshot_1.jpg)
+- [Change it up](images/screenshot_1.jpg)
 - [Main Playing Screen](images/screenshot_2.jpg)
 
 ## Code Styles
